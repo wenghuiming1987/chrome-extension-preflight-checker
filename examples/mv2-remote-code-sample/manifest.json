@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "MV2 Remote Code Risk Sample",
+  "description": "Intentionally risky MV2 extension sample.",
+  "version": "1.0.0",
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "history",
+    "cookies",
+    "clipboardRead"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://analytics.example.net; object-src 'self' 'unsafe-inline';",
+  "externally_connectable": {
+    "matches": [
+      "*://*/*"
+    ]
+  },
+  "web_accessible_resources": [
+    "*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "MV2 risk sample",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true
+    }
+  ]
+}

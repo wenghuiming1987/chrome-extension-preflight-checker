@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Preflight High Risk Sample",
+  "description": "Deliberately high-risk MV3 manifest for static analysis checks.",
+  "version": "1.0.0",
+  "permissions": [
+    "tabs",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "history",
+    "storage",
+    "scripting",
+    "debugger",
+    "identity",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "*://*/*",
+    "http://*/*",
+    "https://*/*",
+    "file://*/*"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "*://*/*"
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "*"
+      ],
+      "matches": [
+        "*://*/*",
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://cdn.example.net 'unsafe-eval'; object-src 'self';"
+  }
+}

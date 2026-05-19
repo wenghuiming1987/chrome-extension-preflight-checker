@@ -57,6 +57,12 @@ Quality gate for every action:
 
 If fewer than 3 compliant opportunities exist on a given day, publish fewer. Three useful, rule-compliant actions is the ceiling and target, not a reason to force weak links.
 
+## Sub-Agent Execution Rule
+
+Use sub-agents for repetitive, low-judgment research work when the task is clearly delegated. Prefer `gpt-5.3-codex-spark` for collecting candidate threads, directories, competitor references, and rule snippets.
+
+Sub-agents may gather information and produce structured candidate lists, but they must not log in, submit, post, fill personal information, or make final judgment calls. The main agent owns prioritization, rule interpretation, reply quality, risk review, tracking records, and final user confirmation before any public action.
+
 ## 7-Day Schedule
 
 Use Beijing time for logging. Prefer posting English communities during US morning or early afternoon.

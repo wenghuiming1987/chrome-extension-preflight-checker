@@ -73,6 +73,12 @@ Use these path counts to estimate the 7-day funnel. Manual review demand should 
 
 Post one concise message per channel. Do not spam many channels at once; stagger posts so feedback can be attributed.
 
+The concrete posting schedule, tracking links, and channel-specific copy are in:
+
+- `docs/outreach-plan.md`
+- `docs/outreach-tracker.md`
+- `docs/community-posts.md`
+
 ## Stop Rule
 
 If the 7-day pilot does not meet the thresholds above:

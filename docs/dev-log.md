@@ -39,10 +39,34 @@
 ### TODO（后续）
 
 - 增加 `docs/faq.md`（针对常见误报与 false positive 场景）
-- 添加轻量反馈记录模板，用于 7 天验证期统计上传、导出、人工审查咨询
+- 使用 `docs/outreach-tracker.md` 记录 7 天验证期外链、上传、导出、人工审查咨询
 - 补齐 `docs/changelog.md` 的版本迭代记录模板
 - 为 Cloudflare Pages 与 GitHub Pages 提供统一的截图化验收清单
 - 7 天验收结束后基于真实结果回写阈值（必要时微调）
+
+## 2026-05-19
+
+### 外链验证准备
+
+- 新增 `docs/outreach-plan.md`：
+  - 固化 7 天外链执行计划
+  - 写明每个渠道的独立追踪路径
+  - 约束不买链接、不群发、不做垃圾外链
+  - 加入 Hacker News / Reddit 相关发帖规则参考
+
+- 新增 `docs/outreach-tracker.md`：
+  - 发布记录表
+  - 每日漏斗统计表
+  - 有效反馈记录表
+  - 人工审查咨询记录表
+
+- 更新 `docs/community-posts.md`：
+  - 替换占位域名为真实 Cloudflare Pages 地址
+  - 增加 Hacker News、Reddit、Indie Hackers、X、LinkedIn、V2EX、Juejin、WeChat 的可复制发帖文案
+  - 每条文案继续保留本地处理、无上传、无认证、无审核保证的边界声明
+
+- 更新 `docs/validation-plan.md`：
+  - 指向新的外链计划与追踪表，方便 7 天验证期执行。
 
 ## 维护说明
 

@@ -6,7 +6,7 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 
 | Date | Time zone | Channel | Post URL | Tracking link | Status | Notes |
 |---|---|---|---|---|---|---|
-| 2026-05-19 | BJT | Reddit |  | `/from/reddit` | Draft ready | First public test; draft prepared in `r/chrome_extensions`, waiting for publish confirmation |
+| 2026-05-19 | BJT | Reddit | https://www.reddit.com/r/chrome_extensions/comments/1thhw5o/i_built_a_localonly_chrome_extension_preflight/ | `/from/reddit` | Posted | First public test published in `r/chrome_extensions`; track visits and report actions in Cloudflare Web Analytics |
 | 2026-05-20 | BJT | Hacker News |  | `/from/hackernews` | Planned | Show HN only if available to reply |
 | 2026-05-20 | BJT | X |  | `/from/x` | Planned | Short launch note |
 | 2026-05-21 | BJT | Public fallback |  |  | Planned | Use strongest logged-in channel if Reddit is blocked |
@@ -24,7 +24,7 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-19 | X | Verification required | X asks for account username verification before posting |
 | 2026-05-19 | Indie Hackers | Login required | Browser redirects to sign-in page |
 | 2026-05-19 | V2EX | Login/CAPTCHA required | User must log in and solve CAPTCHA/invite flow |
-| 2026-05-19 | Reddit | Draft ready | `r/chrome_extensions` rules visible; no hard external-link ban seen, waiting for user publish confirmation |
+| 2026-05-19 | Reddit | Posted | Published in `r/chrome_extensions`; monitor `/from/reddit` and `/event/reddit/*` paths |
 
 ## Daily Funnel
 

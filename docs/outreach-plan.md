@@ -24,7 +24,7 @@ Use source-specific paths when posting:
 | V2EX | `https://chrome-extension-preflight-checker.pages.dev/from/v2ex` | Chinese developer feedback |
 | Juejin | `https://chrome-extension-preflight-checker.pages.dev/from/juejin` | Chinese frontend/extension developers |
 | Zhihu | `https://chrome-extension-preflight-checker.pages.dev/from/zhihu` | Longer Chinese explanation and comments |
-| WeChat/private | `https://chrome-extension-preflight-checker.pages.dev/from/wechat` | Warm samples and direct feedback |
+| WeChat/private | `https://chrome-extension-preflight-checker.pages.dev/from/wechat` | Not used unless a private channel becomes available |
 | GitHub profile/README | `https://chrome-extension-preflight-checker.pages.dev/from/github` | Passive discovery |
 
 ## Posting Principles
@@ -43,9 +43,9 @@ Use Beijing time for logging. Prefer posting English communities during US morni
 
 | Day | Date | Action | Channel link | Success check |
 |---|---|---|---|---|
-| Day 1 | 2026-05-19 | Warm launch to known developers/private chats. Ask for 3-5 real extension samples. | `/from/wechat`, direct main link | At least 2 reports generated |
-| Day 2 | 2026-05-20 | Submit Show HN if you can stay online to reply. Also post one X update. | `/from/hackernews`, `/from/x` | HN comments or at least 5 report generations |
-| Day 3 | 2026-05-21 | Reddit: comment first, check subreddit rules, then post in only one relevant subreddit if allowed. | `/from/reddit` | No removal; at least 1 useful thread reply |
+| Day 1 | 2026-05-19 | Public launch via Reddit only if subreddit rules allow it. If not, use relevant comments instead of a standalone post. | `/from/reddit` | No removal; at least 1 useful thread reply |
+| Day 2 | 2026-05-20 | Submit Show HN after login. Also post one X update after account verification. | `/from/hackernews`, `/from/x` | HN comments or at least 5 report generations |
+| Day 3 | 2026-05-21 | If Reddit Day 1 was blocked, try a second public channel with login ready. Otherwise answer comments and collect feedback. | strongest available public channel | At least 2 reports generated |
 | Day 4 | 2026-05-22 | Indie Hackers launch/story post. Ask specifically for rejected extension cases. | `/from/indiehackers` | At least 1 real founder/developer reply |
 | Day 5 | 2026-05-23 | Chinese developer post: V2EX or Juejin, not both at the same hour. | `/from/v2ex` or `/from/juejin` | At least 2 Chinese feedback replies |
 | Day 6 | 2026-05-24 | Follow-up post with early learning: common MV3/CSP/permission issues found. | strongest channel so far | Export rate improves or more samples arrive |
@@ -63,7 +63,7 @@ Recommended title:
 
 ### Reddit
 
-Before posting, open the target subreddit rules. If self-promotion is disallowed, do not post a link. Instead, answer relevant questions and mention the tool only when it directly helps.
+Before posting, open the target subreddit rules. If self-promotion is disallowed, do not post a standalone link. Instead, answer relevant questions and mention the tool only when it directly helps.
 
 Safer Reddit angle:
 
@@ -80,6 +80,10 @@ Use a founder validation angle, not a security-product angle:
 Use a practical developer angle:
 
 `做了一个本地版 Chrome 扩展发布前预检工具，想找真实扩展样本验证。`
+
+### Private Channels
+
+Skip private channels for this validation unless the user later provides specific groups or contacts. Do not assume warm/private distribution exists.
 
 ## Daily Measurement
 

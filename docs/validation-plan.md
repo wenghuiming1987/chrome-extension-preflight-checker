@@ -71,7 +71,9 @@ Use these path counts to estimate the 7-day funnel. Manual review demand should 
 - X / LinkedIn posts aimed at extension developers
 - Chinese developer communities where Chrome extension builders discuss Web Store rejection
 
-Post one concise message per channel. Do not spam many channels at once; stagger posts so feedback can be attributed.
+Target up to 3 public outreach actions per day, but only after checking the community or directory rules. A valid action can be a relevant problem reply, a compliant standalone post, or a quality free directory/resource submission. If fewer than 3 good opportunities exist, publish fewer rather than forcing weak links.
+
+Every reply should solve the user's problem first, then include one most relevant link only when it naturally helps. Do not spam many channels at once; stagger posts so feedback can be attributed.
 
 The concrete posting schedule, tracking links, and channel-specific copy are in:
 

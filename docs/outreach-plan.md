@@ -37,18 +37,38 @@ Use source-specific paths when posting:
 - Do not buy directory links or submit to low-quality listing sites during validation.
 - Stay available for 2 hours after each high-signal post to answer comments.
 
+## Daily Outreach Rule
+
+Target 3 public outreach actions per day during the 7-day validation run, but only when each action passes the quality gate below.
+
+Recommended daily mix:
+
+- 2 real problem replies where the tool directly helps with MV3, permissions, CSP, remote code, Chrome Web Store rejection, or pre-submission checks.
+- 1 directory/resource submission only if it is free, relevant, public, and does not require a backlink, badge, payment, suspicious redirect, or code change.
+
+Quality gate for every action:
+
+- The page or thread must be relevant to Chrome extension development or Web Store submission risk.
+- Rules must allow external links, tool links, and self-recommendation; otherwise skip.
+- The reply must first answer the user's problem with steps, checks, or explanation before mentioning the tool.
+- Use only one most relevant link, never the homepage by default.
+- Do not post if the thread is stale, already fully answered, or the link would feel forced.
+- Stop before login, CAPTCHA, payment, personal information, final public posting, final directory submission, or website code changes.
+
+If fewer than 3 compliant opportunities exist on a given day, publish fewer. Three useful, rule-compliant actions is the ceiling and target, not a reason to force weak links.
+
 ## 7-Day Schedule
 
 Use Beijing time for logging. Prefer posting English communities during US morning or early afternoon.
 
 | Day | Date | Action | Channel link | Success check |
 |---|---|---|---|---|
-| Day 1 | 2026-05-19 | Public launch via Reddit only if subreddit rules allow it. If not, use relevant comments instead of a standalone post. | `/from/reddit` | No removal; at least 1 useful thread reply |
-| Day 2 | 2026-05-20 | Submit Show HN after login. Also post one X update after account verification. | `/from/hackernews`, `/from/x` | HN comments or at least 5 report generations |
-| Day 3 | 2026-05-21 | If Reddit Day 1 was blocked, try a second public channel with login ready. Otherwise answer comments and collect feedback. | strongest available public channel | At least 2 reports generated |
-| Day 4 | 2026-05-22 | Indie Hackers launch/story post. Ask specifically for rejected extension cases. | `/from/indiehackers` | At least 1 real founder/developer reply |
-| Day 5 | 2026-05-23 | Chinese developer post: V2EX or Juejin, not both at the same hour. | `/from/v2ex` or `/from/juejin` | At least 2 Chinese feedback replies |
-| Day 6 | 2026-05-24 | Follow-up post with early learning: common MV3/CSP/permission issues found. | strongest channel so far | Export rate improves or more samples arrive |
+| Day 1 | 2026-05-19 | Public launch via Reddit only if subreddit rules allow it. Count up to 2 additional compliant problem replies if found. | `/from/reddit` | No removal; at least 1 useful thread reply |
+| Day 2 | 2026-05-20 | Up to 3 compliant actions: Show HN after login, one X update after account verification, and one relevant problem reply or directory submission. | `/from/hackernews`, `/from/x` | HN comments or at least 5 report generations |
+| Day 3 | 2026-05-21 | Up to 3 compliant actions from the strongest available public channel, problem replies, or one quality directory. | strongest available public channel | At least 2 reports generated |
+| Day 4 | 2026-05-22 | Up to 3 compliant actions including Indie Hackers launch/story post if logged in; ask specifically for rejected extension cases. | `/from/indiehackers` | At least 1 real founder/developer reply |
+| Day 5 | 2026-05-23 | Up to 3 compliant actions across Chinese developer channels and relevant problem replies. Do not post duplicate copy to V2EX and Juejin at the same hour. | `/from/v2ex` or `/from/juejin` | At least 2 Chinese feedback replies |
+| Day 6 | 2026-05-24 | Up to 3 compliant follow-up or reply actions using early learning: common MV3/CSP/permission issues found. | strongest channel so far | Export rate improves or more samples arrive |
 | Day 7 | 2026-05-25 | Stop and review metrics. Do not add features until the numbers are clear. | Cloudflare Web Analytics | Decide continue / pause / interview |
 
 ## Channel Notes

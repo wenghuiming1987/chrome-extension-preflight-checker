@@ -7,6 +7,8 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | Date | Time zone | Channel | Post URL | Tracking link | Status | Notes |
 |---|---|---|---|---|---|---|
 | 2026-05-19 | BJT | Reddit | https://www.reddit.com/r/chrome_extensions/comments/1thhw5o/i_built_a_localonly_chrome_extension_preflight/ | `/from/reddit` | Posted | First public test published in `r/chrome_extensions`; track visits and report actions in Cloudflare Web Analytics |
+| 2026-05-19 | BJT | NoSignupTools | https://nosignuptools.com/submit | `/from/nosignuptools` | Submitted for review | Submitted with tool icon and screenshot; directory shows submission received and review pending |
+| 2026-05-19 | BJT | Reddit comment | https://www.reddit.com/r/chrome_extensions/comments/1s69b2s/minimizing_permissions_for_chrome_extension/ | `/from/reddit-permissions` | Posted | Replied to a permissions/host_permissions question with practical guidance first, then one relevant local-only checker link |
 | 2026-05-20 | BJT | Hacker News |  | `/from/hackernews` | Planned | Show HN only if available to reply |
 | 2026-05-20 | BJT | X |  | `/from/x` | Planned | Short launch note |
 | 2026-05-21 | BJT | Public fallback |  |  | Planned | Use strongest logged-in channel if Reddit is blocked |
@@ -25,12 +27,16 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-19 | Indie Hackers | Login required | Browser redirects to sign-in page |
 | 2026-05-19 | V2EX | Login/CAPTCHA required | User must log in and solve CAPTCHA/invite flow |
 | 2026-05-19 | Reddit | Posted | Published in `r/chrome_extensions`; monitor `/from/reddit` and `/event/reddit/*` paths |
+| 2026-05-19 | Reddit permissions thread | Posted | Comment posted in a relevant permissions discussion; monitor `/from/reddit-permissions` and avoid reposting in the same thread |
+| 2026-05-19 | NoSignupTools | Submitted for review | Directory submission completed; monitor `/from/nosignuptools` and wait for approval or rejection |
 
 ## Daily Funnel
 
 | Date | Channel | Visits | Uploads | Reports generated | Exports | Manual review clicks | Real samples | Useful feedback | Notes |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | 2026-05-19 | Reddit |  |  |  |  |  |  |  |  |
+| 2026-05-19 | Reddit permissions comment |  |  |  |  |  |  |  | Track `/from/reddit-permissions`; low-volume but high-intent question thread |
+| 2026-05-19 | NoSignupTools |  |  |  |  |  |  |  | Track `/from/nosignuptools`; pending directory review |
 | 2026-05-20 | Hacker News |  |  |  |  |  |  |  |  |
 | 2026-05-20 | X |  |  |  |  |  |  |  |  |
 | 2026-05-21 | Public fallback |  |  |  |  |  |  |  |  |

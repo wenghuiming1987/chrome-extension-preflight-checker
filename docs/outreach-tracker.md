@@ -9,8 +9,8 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-19 | BJT | Reddit | https://www.reddit.com/r/chrome_extensions/comments/1thhw5o/i_built_a_localonly_chrome_extension_preflight/ | `/from/reddit` | Posted | First public test published in `r/chrome_extensions`; track visits and report actions in Cloudflare Web Analytics |
 | 2026-05-19 | BJT | NoSignupTools | https://nosignuptools.com/submit | `/from/nosignuptools` | Submitted for review | Submitted with tool icon and screenshot; directory shows submission received and review pending |
 | 2026-05-19 | BJT | Reddit comment | https://www.reddit.com/r/chrome_extensions/comments/1s69b2s/minimizing_permissions_for_chrome_extension/ | `/from/reddit-permissions` | Posted | Replied to a permissions/host_permissions question with practical guidance first, then one relevant local-only checker link |
-| 2026-05-20 | BJT | Hacker News |  | `/from/hackernews` | Ready - awaiting final confirmation | Local Chrome can open the HN submit page; post only the Show HN link/title, no generated first comment |
-| 2026-05-20 | BJT | Reddit problem reply | https://www.reddit.com/r/chrome_extensions/comments/1swwowk/broad_host_permissions_how_long_did_your_indepth/ | `/from/reddit-host-permissions` | Ready - awaiting final confirmation | High-relevance host_permissions review-delay question; local Reddit session is logged in as `Willing_Cantaloupe54` |
+| 2026-05-20 | BJT | Hacker News | https://news.ycombinator.com/showlim | `/from/hackernews` | Blocked by HN restriction | Show HN submit redirected to the temporary Show HN restriction page; no public post was created |
+| 2026-05-20 | BJT | Reddit problem reply | https://old.reddit.com/r/chrome_extensions/comments/1swwowk/broad_host_permissions_how_long_did_your_indepth/omt0047/ | `/from/reddit-host-permissions` | Posted | Replied to a high-relevance host_permissions review-delay question with practical review-prep guidance first, then one relevant checker link |
 | 2026-05-20 | BJT | Tool Commons | https://toolcommons.org/ | `/from/toolcommons` | Blocked - license needed | Strong local-first directory fit, but it requires open source under an OSI-approved license and the repo currently has no license file |
 | 2026-05-20 | BJT | X |  | `/from/x` | Blocked - login required | Local Chrome is not logged in to X |
 | 2026-05-21 | BJT | Public fallback |  |  | Planned | Use strongest logged-in channel if Reddit is blocked |
@@ -31,8 +31,8 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-19 | Reddit | Posted | Published in `r/chrome_extensions`; monitor `/from/reddit` and `/event/reddit/*` paths |
 | 2026-05-19 | Reddit permissions thread | Posted | Comment posted in a relevant permissions discussion; monitor `/from/reddit-permissions` and avoid reposting in the same thread |
 | 2026-05-19 | NoSignupTools | Submitted for review | Directory submission completed; monitor `/from/nosignuptools` and wait for approval or rejection |
-| 2026-05-20 | Hacker News | Ready | Local Chrome opens `https://news.ycombinator.com/submit`; final public submission still needs user confirmation |
-| 2026-05-20 | Reddit | Ready | Local Chrome is logged in as `Willing_Cantaloupe54`; final public comment still needs user confirmation |
+| 2026-05-20 | Hacker News | Blocked | Local submit was attempted after user confirmation, but HN redirected to `https://news.ycombinator.com/showlim`; do not retry today |
+| 2026-05-20 | Reddit | Posted | Local Chrome is logged in as `Willing_Cantaloupe54`; host_permissions reply published |
 | 2026-05-20 | X | Login required | Local Chrome shows X signup/login page, so skip until user logs in |
 | 2026-05-20 | Indie Hackers | Login required | Local Chrome redirects to `https://www.indiehackers.com/sign-in`, so skip until user logs in |
 | 2026-05-20 | V2EX | Activation required | Local Chrome is logged in as `whm5294186`, but account requires invite/token activation before posting |
@@ -92,7 +92,8 @@ Tool Commons is a good fit because it explicitly wants open source, local-first,
 | 2026-05-19 | Reddit | 3 | 0 | 0 | 0 | 0 | 0 | 0 | Cloudflare Web Analytics, Last 24 hours GMT+8, bots excluded: `/from/reddit` = 3 page views; no `/event/reddit/*` paths visible |
 | 2026-05-19 | Reddit permissions comment | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Track `/from/reddit-permissions`; no matching path visible in the 2026-05-20 01:10 BJT Cloudflare snapshot |
 | 2026-05-19 | NoSignupTools | 1 | 0 | 0 | 0 | 0 | 0 | 0 | Cloudflare Web Analytics, Last 24 hours GMT+8, bots excluded: `/from/nosignuptools` = 1 page view; pending directory review; no event paths visible |
-| 2026-05-20 | Hacker News |  |  |  |  |  |  |  |  |
+| 2026-05-20 | Hacker News | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Show HN blocked by HN's temporary restriction page; no public post created |
+| 2026-05-20 | Reddit host permissions reply |  |  |  |  |  |  |  | Track `/from/reddit-host-permissions`; comment posted at https://old.reddit.com/r/chrome_extensions/comments/1swwowk/broad_host_permissions_how_long_did_your_indepth/omt0047/ |
 | 2026-05-20 | X |  |  |  |  |  |  |  |  |
 | 2026-05-21 | Public fallback |  |  |  |  |  |  |  |  |
 | 2026-05-22 | Indie Hackers |  |  |  |  |  |  |  |  |

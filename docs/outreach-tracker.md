@@ -156,9 +156,9 @@ Submission result: submitted on 2026-05-20 BJT using `whm5294186@gmail.com`; con
 | 2026-05-19 | Reddit permissions comment | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Track `/from/reddit-permissions`; no matching path visible in the 2026-05-20 01:10 BJT Cloudflare snapshot |
 | 2026-05-19 | NoSignupTools | 1 | 0 | 0 | 0 | 0 | 0 | 0 | Cloudflare Web Analytics, Last 24 hours GMT+8, bots excluded: `/from/nosignuptools` = 1 page view; pending directory review; no event paths visible |
 | 2026-05-20 | Hacker News | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Show HN blocked by HN's temporary restriction page; no public post created |
-| 2026-05-20 | Reddit host permissions reply |  |  |  |  |  |  |  | Track `/from/reddit-host-permissions`; comment posted at https://old.reddit.com/r/chrome_extensions/comments/1swwowk/broad_host_permissions_how_long_did_your_indepth/omt0047/ |
-| 2026-05-20 | Reddit PostHog reply |  |  |  |  |  |  |  | Track `/from/reddit-posthog`; comment posted at https://old.reddit.com/r/chrome_extensions/comments/1nhusf8/chrome_web_store_rejected_my_extension_update_for/omt449z/ |
-| 2026-05-20 | DevPages |  |  |  |  |  |  |  | Track `/from/devpages`; submitted for directory review with confirmed contact email |
+| 2026-05-20 | Reddit host permissions reply | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Track `/from/reddit-host-permissions`; comment posted at https://old.reddit.com/r/chrome_extensions/comments/1swwowk/broad_host_permissions_how_long_did_your_indepth/omt0047/; no matching path visible in the 2026-05-20 23:42 BJT Cloudflare snapshot |
+| 2026-05-20 | Reddit PostHog reply | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Track `/from/reddit-posthog`; comment posted at https://old.reddit.com/r/chrome_extensions/comments/1nhusf8/chrome_web_store_rejected_my_extension_update_for/omt449z/; no matching path visible in the 2026-05-20 23:42 BJT Cloudflare snapshot |
+| 2026-05-20 | DevPages | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Track `/from/devpages`; submitted for directory review with confirmed contact email; no matching path visible in the 2026-05-20 23:42 BJT Cloudflare snapshot |
 | 2026-05-20 | X |  |  |  |  |  |  |  |  |
 | 2026-05-21 | Public fallback |  |  |  |  |  |  |  |  |
 | 2026-05-22 | Indie Hackers |  |  |  |  |  |  |  |  |
@@ -171,6 +171,7 @@ Submission result: submitted on 2026-05-20 BJT using `whm5294186@gmail.com`; con
 | Date checked | Source | Window | Site | Page views | Visits | Referrers | Paths | Countries | Devices | Event paths | Notes |
 |---|---|---|---|---:|---:|---|---|---|---|---|---|
 | 2026-05-20 01:10 BJT | Cloudflare Web Analytics | Last 24 hours, GMT+8, exclude bots = Yes | chrome-extension-preflight-checker.pages.dev | 11 | 11 | None/direct: 8; com.reddit.frontpage: 3 | `/`: 7; `/from/reddit`: 3; `/from/nosignuptools`: 1 | United States: 4; India: 2; Netherlands: 2; Australia: 1; Ireland: 1; Singapore: 1 | Desktop: 7; Mobile: 4 | No `/event/*` paths visible | Very early sample. Treat uploads/reports/exports/manual-review clicks as 0 visible in Cloudflare for this window, not as proof that nobody will use the tool. |
+| 2026-05-20 23:42 BJT | Cloudflare Web Analytics | Last 24 hours, GMT+8, exclude bots = Yes | chrome-extension-preflight-checker.pages.dev | 2 | 2 | None/direct: 2 | `/from/reddit`: 1; `/`: 1 | Germany: 2 | Desktop: 2 | No `/event/*` paths visible; no `/from/reddit-host-permissions`, `/from/reddit-posthog`, or `/from/devpages` visible yet | Sliding 24-hour window after day-2 outreach. Newly posted/submitted links may not have visible traffic yet or may still be delayed in analytics. |
 
 ## Useful Feedback Log
 

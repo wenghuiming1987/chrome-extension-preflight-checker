@@ -11,6 +11,8 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-19 | BJT | Reddit comment | https://www.reddit.com/r/chrome_extensions/comments/1s69b2s/minimizing_permissions_for_chrome_extension/ | `/from/reddit-permissions` | Posted | Replied to a permissions/host_permissions question with practical guidance first, then one relevant local-only checker link |
 | 2026-05-20 | BJT | Hacker News | https://news.ycombinator.com/showlim | `/from/hackernews` | Blocked by HN restriction | Show HN submit redirected to the temporary Show HN restriction page; no public post was created |
 | 2026-05-20 | BJT | Reddit problem reply | https://old.reddit.com/r/chrome_extensions/comments/1swwowk/broad_host_permissions_how_long_did_your_indepth/omt0047/ | `/from/reddit-host-permissions` | Posted | Replied to a high-relevance host_permissions review-delay question with practical review-prep guidance first, then one relevant checker link |
+| 2026-05-20 | BJT | Reddit problem reply | https://www.reddit.com/r/chrome_extensions/comments/1nhusf8/chrome_web_store_rejected_my_extension_update_for/ | `/from/reddit-posthog` | Candidate - awaiting confirmation | Strong remote-code rejection fit; use at most one more Reddit reply today to avoid looking spammy |
+| 2026-05-20 | BJT | DevPages directory | https://devpages.io/submit-a-tool | `/from/devpages` | Candidate - awaiting email/final confirmation | Free developer-tool directory submission; requires contact email, so stop before final submit |
 | 2026-05-20 | BJT | Tool Commons | https://toolcommons.org/ | `/from/toolcommons` | Blocked - license needed | Strong local-first directory fit, but it requires open source under an OSI-approved license and the repo currently has no license file |
 | 2026-05-20 | BJT | X |  | `/from/x` | Blocked - login required | Local Chrome is not logged in to X |
 | 2026-05-21 | BJT | Public fallback |  |  | Planned | Use strongest logged-in channel if Reddit is blocked |
@@ -33,6 +35,8 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-19 | NoSignupTools | Submitted for review | Directory submission completed; monitor `/from/nosignuptools` and wait for approval or rejection |
 | 2026-05-20 | Hacker News | Blocked | Local submit was attempted after user confirmation, but HN redirected to `https://news.ycombinator.com/showlim`; do not retry today |
 | 2026-05-20 | Reddit | Posted | Local Chrome is logged in as `Willing_Cantaloupe54`; host_permissions reply published |
+| 2026-05-20 | Reddit PostHog thread | Candidate | Public thread is directly about Chrome Web Store remote-code rejection; final public comment still needs user confirmation |
+| 2026-05-20 | DevPages | Candidate | Public submit form has no visible login, payment, badge, or backlink requirement, but requires contact email before final submission |
 | 2026-05-20 | X | Login required | Local Chrome shows X signup/login page, so skip until user logs in |
 | 2026-05-20 | Indie Hackers | Login required | Local Chrome redirects to `https://www.indiehackers.com/sign-in`, so skip until user logs in |
 | 2026-05-20 | V2EX | Activation required | Local Chrome is logged in as `whm5294186`, but account requires invite/token activation before posting |
@@ -84,6 +88,63 @@ https://chrome-extension-preflight-checker.pages.dev/from/reddit-host-permission
 ### 2026-05-20 Tool Commons
 
 Tool Commons is a good fit because it explicitly wants open source, local-first, no-login, static-hostable single-purpose tools. The blocker is that this repo is public but currently has no OSI-approved license file. Do not submit until the user approves adding a license, for example MIT.
+
+### 2026-05-20 Reddit PostHog Remote-Code Reply
+
+Thread:
+
+```text
+https://www.reddit.com/r/chrome_extensions/comments/1nhusf8/chrome_web_store_rejected_my_extension_update_for/
+```
+
+Draft:
+
+```text
+For this kind of rejection, I would separate two questions:
+
+1. Does the extension load any remote JavaScript at runtime?
+2. Does the final uploaded bundle still contain remote script/code-loading patterns even if you think the SDK is bundled?
+
+For MV3, the important thing is to inspect the packaged zip, not only the source code. Search the built JS/HTML for PostHog CDN URLs, dynamic loaders, `importScripts("https://...")`, remote `<script src=...>`, and CSP entries that allow remote script or worker sources. If the official browser-extension setup bundles everything locally and only sends network requests for events, that is much easier to justify than loading code remotely.
+
+I built a small local-only preflight checker for this exact pre-submission check. It reads the manifest or extension zip in your browser and flags remote-code patterns, CSP issues, broad permissions, and MV3 compatibility risks. No upload, login, or API:
+https://chrome-extension-preflight-checker.pages.dev/from/reddit-posthog
+```
+
+### 2026-05-20 DevPages Directory Submission
+
+Submit page:
+
+```text
+https://devpages.io/submit-a-tool
+```
+
+Prepared fields:
+
+```text
+Tool Name:
+Chrome Extension Preflight Checker
+
+Website URL:
+https://chrome-extension-preflight-checker.pages.dev/from/devpages
+
+Description:
+A free local-only browser tool that checks Chrome extension manifest.json or extension.zip files for Manifest V3 compatibility, broad permissions, host_permissions, content_scripts, CSP, remote-code patterns, and dynamic execution risks. Files stay in the user's browser; no upload, login, backend, or API.
+
+Category:
+Security
+
+Pricing Model:
+Free
+
+GitHub URL:
+https://github.com/wenghuiming1987/chrome-extension-preflight-checker
+
+Email:
+Use only after user confirms the contact email for directory submissions.
+```
+
+Do not submit until the user confirms using a contact email, because the form requires personal contact information.
 
 ## Daily Funnel
 

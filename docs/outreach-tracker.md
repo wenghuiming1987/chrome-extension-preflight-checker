@@ -15,8 +15,8 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-20 | BJT | DevPages directory | https://devpages.io/submit-a-tool | `/from/devpages` | Submitted for review | Submitted with `whm5294186@gmail.com`; page confirmed: "Thank You! Your tool submission has been received." |
 | 2026-05-20 | BJT | Tool Commons | https://toolcommons.org/ | `/from/toolcommons` | Blocked - license needed | Strong local-first directory fit, but it requires open source under an OSI-approved license and the repo currently has no license file |
 | 2026-05-20 | BJT | X |  | `/from/x` | Blocked - login required | Local Chrome is not logged in to X |
-| 2026-05-21 | BJT | Public fallback |  |  | Planned | Use strongest logged-in channel if Reddit is blocked |
-| 2026-05-22 | BJT | Indie Hackers |  | `/from/indiehackers` | Planned | Founder validation angle |
+| 2026-05-22 | BJT | Reddit manual reply | https://www.reddit.com/r/chrome_extensions/comments/1t906l6/chrome_web_store_review_taking_10_days_after/ | `/from/reddit-review-delay` | Manually posted by user | User reported the prepared review-delay reply was posted; public comment permalink still needs verification |
+| 2026-05-22 | BJT | Reddit manual reply | https://www.reddit.com/r/chrome_extensions/comments/1suf4kl/chrome_review_times_are_brutal/ | `/from/reddit-review-times` | Manually posted by user | User reported the prepared review-times reply was posted; public comment permalink still needs verification |
 | 2026-05-23 | BJT | V2EX/Juejin |  | `/from/v2ex` or `/from/juejin` | Planned | Chinese developer feedback |
 | 2026-05-24 | BJT | Best channel follow-up |  |  | Planned | Share early learning |
 | 2026-05-25 | BJT | Review |  |  | Planned | Decide continue/pause/interview |
@@ -44,13 +44,15 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-21 | Keyword-first workflow | Updated | User corrected the process: search pain keywords first, filter recent results, confirm real questions, check site rules, then answer with one relevant link only if allowed |
 | 2026-05-21 | Sub-agent search | Partially completed | Three `gpt-5.3-codex-spark` agents returned keyword/recent-question, directory, and compliance results; one community-search agent failed from context-window exhaustion and should be retried later with a shorter prompt |
 | 2026-05-22 | Corrected keyword-first sub-agent sweep | Completed | Re-ran separate keyword clusters. Qualified reply opportunities were limited to two recent permissions/review-delay Reddit threads; remote-code, CSP, and package-difference clusters had no safe qualified reply target today. |
+| 2026-05-22 | Reddit review-delay reply | Manually posted by user | User reported the prepared reply was posted to the `1t906l6` thread; verify public permalink and monitor `/from/reddit-review-delay`. |
+| 2026-05-22 | Reddit review-times reply | Manually posted by user | User reported the prepared reply was posted to the `1suf4kl` thread; verify public permalink and monitor `/from/reddit-review-times`. |
 
 ## Qualified Reply Opportunities
 
 | Date found | Keyword cluster | URL | Recency evidence | Existing answer status | Answer gap | Recommended tracking link | Priority | Risk | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| 2026-05-22 | host_permissions / broad permissions / activeTab / review delay | https://www.reddit.com/r/chrome_extensions/comments/1t906l6/chrome_web_store_review_taking_10_days_after/ | About 2 days old in `r/chrome_extensions` | Several experience-based replies, but no structured review-prep checklist | Missing a practical checklist for permission minimization, `activeTab` alternatives, permission justification, and uploaded-zip checks | `/from/reddit-review-delay` | High | Low-medium | Ready for user confirmation before posting |
-| 2026-05-22 | host_permissions / all_urls / in-depth review / activeTab | https://www.reddit.com/r/chrome_extensions/comments/1suf4kl/chrome_review_times_are_brutal/ | About 15 hours old in `r/chrome_extensions` | Opinion/experience replies, but no reproducible process | Missing a specific flow for reducing broad permissions and avoiding repeated slow review signals | `/from/reddit-review-times` | High | Medium | Ready for user confirmation before posting |
+| 2026-05-22 | host_permissions / broad permissions / activeTab / review delay | https://www.reddit.com/r/chrome_extensions/comments/1t906l6/chrome_web_store_review_taking_10_days_after/ | About 2 days old in `r/chrome_extensions` | Several experience-based replies, but no structured review-prep checklist | Missing a practical checklist for permission minimization, `activeTab` alternatives, permission justification, and uploaded-zip checks | `/from/reddit-review-delay` | High | Low-medium | Manually posted by user; permalink verification pending |
+| 2026-05-22 | host_permissions / all_urls / in-depth review / activeTab | https://www.reddit.com/r/chrome_extensions/comments/1suf4kl/chrome_review_times_are_brutal/ | About 15 hours old in `r/chrome_extensions` | Opinion/experience replies, but no reproducible process | Missing a specific flow for reducing broad permissions and avoiding repeated slow review signals | `/from/reddit-review-times` | High | Medium | Manually posted by user; permalink verification pending |
 
 ## Skipped Outreach Candidates
 
@@ -182,6 +184,8 @@ Submission result: submitted on 2026-05-20 BJT using `whm5294186@gmail.com`; con
 | 2026-05-20 | X |  |  |  |  |  |  |  |  |
 | 2026-05-21 | Keyword-first research | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Initial research was too Reddit-heavy. User corrected the process. Re-ran non-Reddit-first sub-agents on 2026-05-22: 7-day non-Reddit real-question results were effectively empty; 30-day fallback found Chromium Extensions threads and weakly related GitHub issues, but no high-confidence non-Reddit answer target. Directory candidates remain FreeNoSignup, Tools Directory Online, Zearches, ToolsCourt. |
 | 2026-05-22 | Corrected keyword-first search | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Strict sub-agent sweep by keyword cluster found 2 qualified reply opportunities, both recent Reddit permission/review-delay threads; no qualified remote-code, CSP, or package-difference target today. |
+| 2026-05-22 | Reddit review-delay reply |  |  |  |  |  |  |  | User manually posted prepared reply with `/from/reddit-review-delay`; public permalink and Cloudflare events still need verification. |
+| 2026-05-22 | Reddit review-times reply |  |  |  |  |  |  |  | User manually posted prepared reply with `/from/reddit-review-times`; public permalink and Cloudflare events still need verification. |
 | 2026-05-23 | Chinese developer channel |  |  |  |  |  |  |  |  |
 | 2026-05-24 | Follow-up |  |  |  |  |  |  |  |  |
 | 2026-05-25 | Total review |  |  |  |  |  |  |  |  |

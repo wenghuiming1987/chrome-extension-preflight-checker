@@ -19,6 +19,9 @@ const severityLabels: Record<Severity, string> = {
   Info: "Info",
 };
 
+type SampleKind = "high" | "low";
+type ReportOrigin = "file" | "sample-high" | "sample-low";
+
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
@@ -79,14 +82,19 @@ function FindingCard({ finding }: { finding: Finding }) {
 
 function ReportPanel({
   report,
+  reportOrigin,
   onExportMarkdown,
   onExportJson,
+  onChooseFile,
 }: {
   report: Report;
+  reportOrigin: ReportOrigin;
   onExportMarkdown: () => void;
   onExportJson: () => void;
+  onChooseFile: () => void;
 }) {
   const topFindings = useMemo(() => report.findings.slice(0, 6), [report.findings]);
+  const isSampleReport = reportOrigin !== "file";
 
   return (
     <main className="report-grid">
@@ -102,6 +110,26 @@ function ReportPanel({
           <div className={`risk-badge risk-${report.overallRisk.toLowerCase()}`}>
             {report.overallRisk}
           </div>
+        </div>
+
+        <div
+          className={`report-context ${
+            isSampleReport ? "report-context-demo" : "report-context-file"
+          }`}
+        >
+          <div>
+            <strong>{isSampleReport ? "Demo report loaded" : "Your file report"}</strong>
+            <span>
+              {isSampleReport
+                ? "This sample shows the kind of issues the checker can surface. Upload your own manifest.json or extension.zip for a real local scan."
+                : "This report was generated from the file you selected. Files stayed in this browser session."}
+            </span>
+          </div>
+          {isSampleReport ? (
+            <button className="secondary-button compact-button" type="button" onClick={onChooseFile}>
+              Analyze your extension
+            </button>
+          ) : null}
         </div>
 
         <div className="summary-grid">
@@ -130,32 +158,32 @@ function ReportPanel({
           <div>
             <h3>Permissions</h3>
             <ul>
-              {report.permissionSummary.map((item) => (
-                <li key={item}>{item}</li>
+              {report.permissionSummary.map((item, index) => (
+                <li key={`permission-${index}-${item}`}>{item}</li>
               ))}
             </ul>
           </div>
           <div>
             <h3>Host permissions</h3>
             <ul>
-              {report.hostPermissionSummary.map((item) => (
-                <li key={item}>{item}</li>
+              {report.hostPermissionSummary.map((item, index) => (
+                <li key={`host-${index}-${item}`}>{item}</li>
               ))}
             </ul>
           </div>
           <div>
             <h3>MV3 compatibility</h3>
             <ul>
-              {report.mv3CompatibilitySummary.map((item) => (
-                <li key={item}>{item}</li>
+              {report.mv3CompatibilitySummary.map((item, index) => (
+                <li key={`mv3-${index}-${item}`}>{item}</li>
               ))}
             </ul>
           </div>
           <div>
             <h3>Remote code</h3>
             <ul>
-              {report.remoteCodeSummary.map((item) => (
-                <li key={item}>{item}</li>
+              {report.remoteCodeSummary.map((item, index) => (
+                <li key={`remote-${index}-${item}`}>{item}</li>
               ))}
             </ul>
           </div>
@@ -174,8 +202,8 @@ function ReportPanel({
         </div>
         <div className="finding-list">
           {report.findings.length > 0 ? (
-            report.findings.map((finding) => (
-              <FindingCard key={finding.id} finding={finding} />
+            report.findings.map((finding, index) => (
+              <FindingCard key={`${finding.id}-${index}`} finding={finding} />
             ))
           ) : (
             <div className="empty-state">
@@ -190,8 +218,8 @@ function ReportPanel({
         <section className="panel checklist-panel" aria-labelledby="checklist-title">
           <h2 id="checklist-title">Remediation checklist</h2>
           <ul className="checklist">
-            {report.checklist.map((item) => (
-              <li key={item}>
+            {report.checklist.map((item, index) => (
+              <li key={`checklist-${index}-${item}`}>
                 <input type="checkbox" aria-label={item} />
                 <span>{item}</span>
               </li>
@@ -259,8 +287,8 @@ function ReportPanel({
         <section className="panel compact-findings" aria-labelledby="compact-title">
           <h2 id="compact-title">Top review prompts</h2>
           <ol>
-            {topFindings.map((finding) => (
-              <li key={finding.id}>
+            {topFindings.map((finding, index) => (
+              <li key={`${finding.id}-compact-${index}`}>
                 <span className={`severity severity-${finding.severity.toLowerCase()}`}>
                   {finding.severity}
                 </span>
@@ -275,8 +303,11 @@ function ReportPanel({
 }
 
 export default function App() {
-  const [report, setReport] = useState<Report>(() => SAMPLE_REPORTS.low());
-  const [status, setStatus] = useState("Sample report loaded.");
+  const [report, setReport] = useState<Report>(() => SAMPLE_REPORTS.high());
+  const [reportOrigin, setReportOrigin] = useState<ReportOrigin>("sample-high");
+  const [status, setStatus] = useState(
+    "High-risk demo report loaded. Upload your own file when ready.",
+  );
   const [error, setError] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -284,6 +315,20 @@ export default function App() {
 
   useEffect(() => {
     rememberSourceFromUrl();
+  }, []);
+
+  const openFilePicker = useCallback(() => {
+    trackUsageEvent("choose-file-click");
+    inputRef.current?.click();
+  }, []);
+
+  const loadSample = useCallback((kind: SampleKind) => {
+    const isHigh = kind === "high";
+    setReport(isHigh ? SAMPLE_REPORTS.high() : SAMPLE_REPORTS.low());
+    setReportOrigin(isHigh ? "sample-high" : "sample-low");
+    setStatus(isHigh ? "High-risk demo report loaded." : "Low-risk demo report loaded.");
+    setError(null);
+    trackUsageEvent(`sample-${kind}`);
   }, []);
 
   const analyzeFile = useCallback(async (file: File) => {
@@ -295,6 +340,7 @@ export default function App() {
       const input = await readInputFile(file);
       const nextReport = analyzeExtension(input);
       setReport(nextReport);
+      setReportOrigin("file");
       setStatus(`Report generated for ${file.name}.`);
       trackUsageEvent("report-generated");
     } catch (err) {
@@ -382,25 +428,25 @@ export default function App() {
               report for MV3 compatibility, broad permissions, host access, CSP,
               remote script references, and dynamic execution patterns.
             </p>
+            <ul className="hero-proof" aria-label="What the demo shows">
+              <li>High-risk demo report is already loaded below.</li>
+              <li>Markdown export is included for review notes.</li>
+              <li>Zip and source checks run locally in the browser.</li>
+            </ul>
             <div className="hero-actions">
               <button
                 className="primary-button"
                 type="button"
-                onClick={() => inputRef.current?.click()}
+                onClick={openFilePicker}
               >
-                Choose file
+                Analyze your extension
               </button>
               <button
                 className="secondary-button"
                 type="button"
-                onClick={() => {
-                  setReport(SAMPLE_REPORTS.high());
-                  setStatus("High-risk sample report loaded.");
-                  setError(null);
-                  trackUsageEvent("sample-high");
-                }}
+                onClick={() => loadSample("high")}
               >
-                Try sample manifest
+                Run demo report
               </button>
             </div>
           </div>
@@ -416,6 +462,7 @@ export default function App() {
             <h2 id="upload-title">Upload area</h2>
             <label
               className={`dropzone ${isAnalyzing ? "dropzone-busy" : ""}`}
+              onClick={() => trackUsageEvent("choose-file-click")}
             >
               <input
                 ref={inputRef}
@@ -430,31 +477,28 @@ export default function App() {
                 Zip max 20MB. Max 1000 files. Text scan max 10MB.
               </span>
             </label>
-            <div className="sample-row">
-              <button
-                type="button"
-                className="text-button"
-                onClick={() => {
-                  setReport(SAMPLE_REPORTS.low());
-                  setStatus("Low-risk sample report loaded.");
-                  setError(null);
-                  trackUsageEvent("sample-low");
-                }}
-              >
-                Load sample report
-              </button>
-              <button
-                type="button"
-                className="text-button"
-                onClick={() => {
-                  setReport(SAMPLE_REPORTS.high());
-                  setStatus("High-risk sample report loaded.");
-                  setError(null);
-                  trackUsageEvent("sample-high");
-                }}
-              >
-                Try high-risk sample
-              </button>
+            <div className="sample-callout">
+              <h3>No extension file ready?</h3>
+              <p>
+                Open a sample report first, then upload your own package when you
+                want real scan results.
+              </p>
+              <div className="button-row">
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={() => loadSample("high")}
+                >
+                  Run high-risk demo
+                </button>
+                <button
+                  type="button"
+                  className="text-button"
+                  onClick={() => loadSample("low")}
+                >
+                  Load low-risk demo
+                </button>
+              </div>
             </div>
             <div className={`status-line ${error ? "status-error" : ""}`}>
               <span>{isAnalyzing ? "Analyzing" : "Status"}</span>
@@ -466,8 +510,10 @@ export default function App() {
 
       <ReportPanel
         report={report}
+        reportOrigin={reportOrigin}
         onExportMarkdown={exportMarkdown}
         onExportJson={exportJson}
+        onChooseFile={openFilePicker}
       />
 
       <footer id="disclaimer" className="footer-disclaimer">

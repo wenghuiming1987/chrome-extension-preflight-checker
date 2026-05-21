@@ -170,9 +170,36 @@ h3 {
 
 .hero-text {
   max-width: 690px;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
   color: var(--muted);
   font-size: 1.03rem;
+}
+
+.hero-proof {
+  display: grid;
+  gap: 8px;
+  max-width: 690px;
+  margin: 0 0 28px;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  list-style: none;
+}
+
+.hero-proof li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+  overflow-wrap: anywhere;
+}
+
+.hero-proof li::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
 }
 
 .hero-actions,
@@ -237,6 +264,12 @@ h3 {
   justify-content: center;
   width: fit-content;
   text-decoration: none;
+}
+
+.compact-button {
+  min-height: 38px;
+  padding: 0 14px;
+  white-space: nowrap;
 }
 
 .upload-panel,
@@ -321,6 +354,25 @@ h3 {
   pointer-events: none;
 }
 
+.sample-callout {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #dce7dc;
+  border-radius: 8px;
+  background: #f7faf7;
+}
+
+.sample-callout h3,
+.sample-callout p {
+  margin-bottom: 0;
+}
+
+.sample-callout p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .status-line {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -378,6 +430,39 @@ h3 {
 .section-head p,
 .panel p {
   color: var(--muted);
+}
+
+.report-context {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border: 1px solid #dce7dc;
+  border-radius: 8px;
+  background: #f7faf7;
+}
+
+.report-context div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.report-context strong {
+  font-size: 0.92rem;
+}
+
+.report-context span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.report-context-file {
+  border-color: rgba(18, 108, 87, 0.28);
+  background: #eef8f2;
 }
 
 .risk-badge {
@@ -717,6 +802,10 @@ h3 {
     max-width: 32ch;
   }
 
+  .hero-proof {
+    max-width: 32ch;
+  }
+
   .hero-actions {
     max-width: 350px;
   }
@@ -739,6 +828,15 @@ h3 {
   .primary-button,
   .secondary-button,
   .link-button {
+    width: 100%;
+  }
+
+  .report-context {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .compact-button {
     width: 100%;
   }
 

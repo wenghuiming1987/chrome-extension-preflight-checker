@@ -53,6 +53,9 @@ Cloudflare Web Analytics currently does not support UTM parameters or custom eve
 
 The app records key actions as virtual paths:
 
+- `/event/<channel>/choose-file-click`
+- `/event/<channel>/sample-high`
+- `/event/<channel>/sample-low`
 - `/event/<channel>/upload-file`
 - `/event/<channel>/report-generated`
 - `/event/<channel>/analysis-failed`
@@ -60,7 +63,7 @@ The app records key actions as virtual paths:
 - `/event/<channel>/export-json`
 - `/event/<channel>/manual-review-click`
 
-Use these path counts to estimate the 7-day funnel. Manual review demand should still be confirmed by real email inquiries, not path counts alone.
+Use these path counts to estimate the 7-day funnel. Sample-report events are useful for diagnosing first-use interest, but they do not replace the core upload/report/export targets. Manual review demand should still be confirmed by real email inquiries, not path counts alone.
 
 ## Suggested Channels
 

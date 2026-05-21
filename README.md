@@ -68,6 +68,9 @@ npm run typecheck # 仅类型检查
 本项目不在代码里接入第三方分析 SDK，也不上传用户文件。为了在 Cloudflare Web Analytics 中看验证漏斗，页面会在关键动作发生时写入虚拟路径：
 
 - `/from/<channel>`：外链渠道入口，例如 `/from/reddit`、`/from/x`、`/from/v2ex`
+- `/event/<channel>/choose-file-click`：点击上传/选择文件入口
+- `/event/<channel>/sample-high`：打开高风险样例报告
+- `/event/<channel>/sample-low`：打开低风险样例报告
 - `/event/<channel>/upload-file`：用户选择或拖入文件
 - `/event/<channel>/report-generated`：报告生成成功
 - `/event/<channel>/analysis-failed`：分析失败

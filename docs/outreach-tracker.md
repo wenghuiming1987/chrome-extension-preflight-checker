@@ -41,6 +41,26 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-20 | Indie Hackers | Login required | Local Chrome redirects to `https://www.indiehackers.com/sign-in`, so skip until user logs in |
 | 2026-05-20 | V2EX | Activation required | Local Chrome is logged in as `whm5294186`, but account requires invite/token activation before posting |
 | 2026-05-20 | Tool Commons | License blocked | GitHub CLI is logged in, but Tool Commons requires an OSI-approved license and this repo has no license metadata |
+| 2026-05-21 | Keyword-first workflow | Updated | User corrected the process: search pain keywords first, filter recent results, confirm real questions, check site rules, then answer with one relevant link only if allowed |
+| 2026-05-21 | Sub-agent search | Partially completed | Three `gpt-5.3-codex-spark` agents returned keyword/recent-question, directory, and compliance results; one community-search agent failed from context-window exhaustion and should be retried later with a shorter prompt |
+| 2026-05-22 | Corrected keyword-first sub-agent sweep | Completed | Re-ran separate keyword clusters. Qualified reply opportunities were limited to two recent permissions/review-delay Reddit threads; remote-code, CSP, and package-difference clusters had no safe qualified reply target today. |
+
+## Qualified Reply Opportunities
+
+| Date found | Keyword cluster | URL | Recency evidence | Existing answer status | Answer gap | Recommended tracking link | Priority | Risk | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| 2026-05-22 | host_permissions / broad permissions / activeTab / review delay | https://www.reddit.com/r/chrome_extensions/comments/1t906l6/chrome_web_store_review_taking_10_days_after/ | About 2 days old in `r/chrome_extensions` | Several experience-based replies, but no structured review-prep checklist | Missing a practical checklist for permission minimization, `activeTab` alternatives, permission justification, and uploaded-zip checks | `/from/reddit-review-delay` | High | Low-medium | Ready for user confirmation before posting |
+| 2026-05-22 | host_permissions / all_urls / in-depth review / activeTab | https://www.reddit.com/r/chrome_extensions/comments/1suf4kl/chrome_review_times_are_brutal/ | About 15 hours old in `r/chrome_extensions` | Opinion/experience replies, but no reproducible process | Missing a specific flow for reducing broad permissions and avoiding repeated slow review signals | `/from/reddit-review-times` | High | Medium | Ready for user confirmation before posting |
+
+## Skipped Outreach Candidates
+
+| Date found | URL or source | Reason |
+|---|---|---|
+| 2026-05-22 | https://www.reddit.com/r/chrome_extensions/comments/1tink3x/i_kept_getting_my_extension_rejected_for_things_i/ | Recent but too broad/experience-oriented; not a precise unanswered technical problem for our link. |
+| 2026-05-22 | https://www.reddit.com/r/chrome_extensions/comments/1thl8g8/got_rejected_3_times_over_17_days_for_my_chrome/ | Recent but appears to be another tool/scanner promotion context; replying with our tool link would look like hijacking. |
+| 2026-05-22 | https://www.reddit.com/r/chrome_extensions/comments/1tdqegq/i_am_building_chrome_extension_but_stucked/ | Recent but about project direction, not MV3/pre-submission technical risk. |
+| 2026-05-22 | https://github.com/openai/codex/issues/21700 | Within 30 days but about official extension availability/offline install, not a Chrome Web Store preflight issue; external tool link would be off-topic. |
+| 2026-05-22 | Stack Overflow permissions / CSP / remote-code historical results | Mostly old, closed, already answered, or high self-promotion risk; not counted for today's 7-day reply plan. |
 
 ## Prepared Drafts
 
@@ -160,8 +180,8 @@ Submission result: submitted on 2026-05-20 BJT using `whm5294186@gmail.com`; con
 | 2026-05-20 | Reddit PostHog reply | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Track `/from/reddit-posthog`; comment posted at https://old.reddit.com/r/chrome_extensions/comments/1nhusf8/chrome_web_store_rejected_my_extension_update_for/omt449z/; no matching path visible in the 2026-05-20 23:42 BJT Cloudflare snapshot |
 | 2026-05-20 | DevPages | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Track `/from/devpages`; submitted for directory review with confirmed contact email; no matching path visible in the 2026-05-20 23:42 BJT Cloudflare snapshot |
 | 2026-05-20 | X |  |  |  |  |  |  |  |  |
-| 2026-05-21 | Public fallback |  |  |  |  |  |  |  |  |
-| 2026-05-22 | Indie Hackers |  |  |  |  |  |  |  |  |
+| 2026-05-21 | Keyword-first research | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Initial research was too Reddit-heavy. User corrected the process. Re-ran non-Reddit-first sub-agents on 2026-05-22: 7-day non-Reddit real-question results were effectively empty; 30-day fallback found Chromium Extensions threads and weakly related GitHub issues, but no high-confidence non-Reddit answer target. Directory candidates remain FreeNoSignup, Tools Directory Online, Zearches, ToolsCourt. |
+| 2026-05-22 | Corrected keyword-first search | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Strict sub-agent sweep by keyword cluster found 2 qualified reply opportunities, both recent Reddit permission/review-delay threads; no qualified remote-code, CSP, or package-difference target today. |
 | 2026-05-23 | Chinese developer channel |  |  |  |  |  |  |  |  |
 | 2026-05-24 | Follow-up |  |  |  |  |  |  |  |  |
 | 2026-05-25 | Total review |  |  |  |  |  |  |  |  |

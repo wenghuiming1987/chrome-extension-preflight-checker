@@ -57,11 +57,79 @@ Quality gate for every action:
 
 If fewer than 3 compliant opportunities exist on a given day, publish fewer. Three useful, rule-compliant actions is the ceiling and target, not a reason to force weak links.
 
+## Reply Opportunity Qualification
+
+A candidate is a real reply opportunity only when all of these are true:
+
+- It was found through a pain keyword search, not by starting from a favorite forum.
+- It is a real user question or troubleshooting thread, not a product launch, directory page, competitor self-promotion post, generic article, or broad opinion discussion.
+- It is recent: last 7 days first. Last 30 days can be used only as fallback and must be labeled as fallback.
+- Existing answers are missing, thin, outdated, incorrect, or do not give a usable checklist.
+- The problem can be answered with a standard, useful explanation before any link is mentioned.
+- The link would help the specific reader run a check, not merely promote the homepage.
+- The page is open for replies. Closed Stack Overflow questions, locked GitHub issues, archived threads, or login/CAPTCHA-only pages do not count as ready opportunities.
+
+Skip candidates when:
+
+- The thread is already fully answered.
+- The only available angle is "wait for review" or "contact support" and the checker cannot help.
+- The author is promoting a competing scanner or service, because replying with our tool link would look like hijacking.
+- The site rules forbid self-promotion, external links, AI-generated replies, ads, commercial links, or tool links.
+- The candidate is older than 30 days, unless it is kept only as a research note and not counted toward daily outreach.
+
+## Keyword-First Search Workflow
+
+Do not start from a fixed forum or directory list. Start from the user's actual problem language, then decide whether a link is appropriate.
+
+Daily search order:
+
+1. Search pain keywords first:
+   - `Chrome Web Store rejected remote code`
+   - `Chrome extension MV3 host_permissions review`
+   - `Manifest V3 unsafe-eval CSP`
+   - `Chrome extension broad permissions review`
+   - `extension works locally but not Chrome Web Store`
+   - `Chrome extension review taking long permissions`
+   - `Chrome extension upload zip manifest permissions`
+   - `Chrome extension remote code policy`
+2. Filter to the last 7 days first. If the result set is too small, expand to the last 30 days and mark those opportunities as fallback.
+3. Confirm the page is a real question or active discussion, not just a loosely related article.
+4. Read the existing answers or comments and decide whether the answer is absent, weak, incomplete, or not actionable.
+5. Check the host site's rules before drafting:
+   - external links allowed
+   - self-recommendation allowed or at least not forbidden
+   - tool links allowed
+   - no explicit ban on AI-generated replies
+   - no ban on commercial links if the site treats free tools as commercial
+6. Draft the answer only after the rule check passes. The answer must solve the problem first and include at most one relevant tracking link at the end.
+7. Stop before login, CAPTCHA, payment, personal information, final public posting, final directory submission, or website code changes.
+
+If a channel appears repeatedly, that is acceptable only because the keyword search found real problems there. Do not assume Reddit, HN, Stack Overflow, directories, or any other channel is the default.
+
 ## Sub-Agent Execution Rule
 
 Use sub-agents for repetitive, low-judgment research work when the task is clearly delegated. Prefer `gpt-5.3-codex-spark` for collecting candidate threads, directories, competitor references, and rule snippets.
 
 Sub-agents may gather information and produce structured candidate lists, but they must not log in, submit, post, fill personal information, or make final judgment calls. The main agent owns prioritization, rule interpretation, reply quality, risk review, tracking records, and final user confirmation before any public action.
+
+Give every sub-agent the full operating context instead of assuming it knows the project:
+
+- Live URL: `https://chrome-extension-preflight-checker.pages.dev/`
+- Positioning: free local-only Chrome extension manifest/zip preflight checker.
+- Privacy boundary: no upload, no login, no API, no backend, no database.
+- Checks: MV3 compatibility, permissions, host_permissions, content_scripts, CSP, remote-code patterns, dynamic execution, Markdown export.
+- Outreach rule: keyword-first, last 7 days first, real questions first, rules before replies, one link max.
+- Tracking: use source paths like `https://chrome-extension-preflight-checker.pages.dev/from/<source>`, not generic homepage links.
+- Hard stop: no login, CAPTCHA, payment, personal information, final publish/submit, or code changes.
+
+Use parallel sub-agent roles when running a daily search. Each sub-agent must search a different keyword cluster and must return only qualified reply opportunities plus a skip list:
+
+- Agent A: remote code, Blue Argon, remotely hosted code, analytics SDK, gtag, Firebase auth.
+- Agent B: CSP, unsafe-eval, eval, new Function, importScripts, remote script tags, worker-src.
+- Agent C: host_permissions, <all_urls>, activeTab, tabs permission, permission justification, overbroad permissions.
+- Agent D: works locally but not Web Store, service worker inactive, packaged zip differences, could-not-unzip, manifest packaging.
+
+All sub-agents return structured candidates with: search keyword, URL, platform, recency evidence, exact user question, existing-answer status, answer gap, whether a standard answer with one link is appropriate, rule status, login/CAPTCHA/personal-info needs, recommended tracking path, reply angle, priority, risk, and skip reason.
 
 ## 7-Day Schedule
 

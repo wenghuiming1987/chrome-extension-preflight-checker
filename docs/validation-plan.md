@@ -19,6 +19,33 @@ Track these metrics for 7 calendar days after sharing the free test page:
 | Users who say the report is useful | >= 5 |
 | Manual review / rejection-fix inquiries | >= 3 |
 
+Use these thresholds only after there is enough traffic to read the funnel. With fewer than about 100 visits, treat upload/export rates as directional only.
+
+## Leading Signals
+
+For the next 3 days, first separate exposure problems from product-conversion problems.
+
+Layer 1: exposure and interest signals:
+
+| Metric | Useful signal |
+|---|---:|
+| 7-day site visits | >= 150 |
+| Sample manifest / sample report clicks | >= 25% of visits |
+| Relevant Reddit / forum replies with positive engagement | >= 20 combined upvotes or useful replies |
+| At least one outreach channel sending measurable `/from/<channel>` visits | Yes |
+
+Layer 2: product and service validation signals:
+
+| Metric | Useful signal |
+|---|---:|
+| Real file uploads | >= 10 |
+| Report generation after upload | >= 70% |
+| Markdown or JSON export after report | >= 10% |
+| Manual review clicks or emails | >= 3 |
+| Specific useful feedback, not just "cool tool" | >= 3 |
+
+If Layer 1 fails, fix positioning and channels before adding features. If Layer 1 passes but Layer 2 fails, inspect the landing page, upload trust barrier, and whether the human review service is the real product.
+
 ## Daily Log Template
 
 Use one row per day:

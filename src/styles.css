@@ -211,6 +211,39 @@ h3 {
   align-items: center;
 }
 
+.hero-report-link {
+  min-height: 44px;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 760px;
+}
+
+.pain-grid div {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.pain-grid strong {
+  font-size: 0.92rem;
+  line-height: 1.22;
+}
+
+.pain-grid span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
 .primary-button,
 .secondary-button,
 .text-button {
@@ -806,6 +839,11 @@ h3 {
     max-width: 32ch;
   }
 
+  .pain-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+  }
+
   .hero-actions {
     max-width: 350px;
   }
@@ -827,7 +865,8 @@ h3 {
 
   .primary-button,
   .secondary-button,
-  .link-button {
+  .link-button,
+  .hero-report-link {
     width: 100%;
   }
 

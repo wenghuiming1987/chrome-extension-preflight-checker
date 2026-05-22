@@ -244,19 +244,20 @@ function ReportPanel({
         </section>
 
         <section className="panel service-panel" aria-labelledby="service-title">
-          <h2 id="service-title">Human review</h2>
+          <h2 id="service-title">Already rejected?</h2>
           <p>
-            Need a human review before Chrome Web Store submission? Get a manual
-            review for MV3, permissions, remote code, CSP and rejection risks.
+            Need a human eye before Chrome Web Store resubmission? Send the
+            rejection note and your report context for MV3, permissions, remote
+            code, CSP, and review-readiness feedback.
           </p>
           <a
             className="primary-button link-button"
             href={`mailto:whm5294186@gmail.com?subject=${encodeURIComponent(
-              "Chrome extension manual review request",
+              "Chrome Web Store rejection review request",
             )}`}
             onClick={() => trackUsageEvent("manual-review-click")}
           >
-            Request manual review
+            Ask for manual review
           </a>
         </section>
 
@@ -322,6 +323,13 @@ export default function App() {
     inputRef.current?.click();
   }, []);
 
+  const scrollToReport = useCallback(() => {
+    document.getElementById("summary-title")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, []);
+
   const loadSample = useCallback((kind: SampleKind) => {
     const isHigh = kind === "high";
     setReport(isHigh ? SAMPLE_REPORTS.high() : SAMPLE_REPORTS.low());
@@ -330,6 +338,16 @@ export default function App() {
     setError(null);
     trackUsageEvent(`sample-${kind}`);
   }, []);
+
+  const trySampleReport = useCallback(() => {
+    loadSample("high");
+    window.setTimeout(scrollToReport, 0);
+  }, [loadSample, scrollToReport]);
+
+  const viewSampleReport = useCallback(() => {
+    trackUsageEvent("view-sample-report");
+    scrollToReport();
+  }, [scrollToReport]);
 
   const analyzeFile = useCallback(async (file: File) => {
     setIsAnalyzing(true);
@@ -405,7 +423,7 @@ export default function App() {
         <nav className="topbar" aria-label="Primary">
           <a className="brand" href="/">
             <span className="brand-mark">CE</span>
-            <span>Preflight Checker</span>
+            <span>Rejection Checker</span>
           </a>
           <a className="nav-link" href="#disclaimer">
             Disclaimer
@@ -415,39 +433,60 @@ export default function App() {
         <div className="hero-content">
           <div className="hero-copy">
             <h1>
-              <span>Chrome</span>
-              <span>Extension</span>
-              <span>Preflight</span>
-              <span>Checker</span>
+              <span>Catch Chrome</span>
+              <span>Web Store</span>
+              <span>rejections</span>
+              <span>before review</span>
             </h1>
             <p className="privacy-line">
               Files stay in your browser. No upload. No login. No API.
             </p>
             <p className="hero-text">
-              Upload a manifest.json or extension.zip to produce a static review
-              report for MV3 compatibility, broad permissions, host access, CSP,
-              remote script references, and dynamic execution patterns.
+              Free static checks for MV3, broad permissions, host access, CSP,
+              remote code, and dynamic execution patterns that can get Chrome
+              extensions rejected or stuck in review.
             </p>
             <ul className="hero-proof" aria-label="What the demo shows">
-              <li>High-risk demo report is already loaded below.</li>
-              <li>Markdown export is included for review notes.</li>
-              <li>Zip and source checks run locally in the browser.</li>
+              <li>Try a sample report without uploading anything.</li>
+              <li>Analyze manifest.json or extension.zip locally.</li>
+              <li>Export Markdown for review notes or manual fixes.</li>
             </ul>
             <div className="hero-actions">
               <button
                 className="primary-button"
                 type="button"
-                onClick={openFilePicker}
+                onClick={trySampleReport}
               >
-                Analyze your extension
+                Try sample manifest
               </button>
               <button
                 className="secondary-button"
                 type="button"
-                onClick={() => loadSample("high")}
+                onClick={openFilePicker}
               >
-                Run demo report
+                Upload your manifest
               </button>
+              <button
+                className="text-button hero-report-link"
+                type="button"
+                onClick={viewSampleReport}
+              >
+                View sample report
+              </button>
+            </div>
+            <div className="pain-grid" aria-label="Why run a static check before review">
+              <div>
+                <strong>Avoid rejection surprises</strong>
+                <span>Flag Blue/Yellow Argon-style remote code, CSP, and MV3 signals before submission.</span>
+              </div>
+              <div>
+                <strong>Reduce review friction</strong>
+                <span>See broad permissions, host access, early content scripts, and risky defaults in one report.</span>
+              </div>
+              <div>
+                <strong>Keep code private</strong>
+                <span>Parsing runs in this browser session. Your extension package is not uploaded.</span>
+              </div>
             </div>
           </div>
 
@@ -480,16 +519,16 @@ export default function App() {
             <div className="sample-callout">
               <h3>No extension file ready?</h3>
               <p>
-                Open a sample report first, then upload your own package when you
-                want real scan results.
+                Try the built-in high-risk sample first, then upload your own
+                package when you want real scan results.
               </p>
               <div className="button-row">
                 <button
                   type="button"
                   className="secondary-button"
-                  onClick={() => loadSample("high")}
+                  onClick={trySampleReport}
                 >
-                  Run high-risk demo
+                  Try sample manifest
                 </button>
                 <button
                   type="button"

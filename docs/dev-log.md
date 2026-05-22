@@ -93,6 +93,27 @@
   - `sample-high` / `sample-low` 用于观察无文件用户是否试用样例报告
 - 更新 `README.md` 与 `docs/validation-plan.md`，把新增行为路径纳入 Cloudflare Web Analytics 观察口径。
 
+## 2026-05-22
+
+### 市场验证定位调整
+
+- 根据早期验证反馈和外部市场分析，将首屏从泛化的 `Preflight Checker` 调整为更痛点化的 Chrome Web Store rejection / review readiness 方向。
+- Hero H1 改为 `Catch Chrome Web Store rejections before review`，副标题强调 MV3、broad permissions、host access、CSP、remote code、dynamic execution 这些可能导致被拒或审核卡住的静态信号。
+- 调整首屏 CTA 优先级：
+  - 主 CTA：`Try sample manifest`
+  - 次 CTA：`Upload your manifest`
+  - 低门槛入口：`View sample report`
+- 增加三条首屏痛点说明：
+  - Avoid rejection surprises
+  - Reduce review friction
+  - Keep code private
+- 将人工入口从泛化 `Human review` 改成 `Already rejected?`，更直接面向 Chrome Web Store 被拒或准备重新提交的用户，但仍不接支付、不做审核通过保证。
+- 验证结果：
+  - `npm run typecheck` 通过
+  - `npm run build` 通过
+  - 本地 Chrome/Playwright 桌面和移动视口检查无明显重叠
+  - 从 `/from/reddit-review-delay` 点击 sample 后正确记录 `/event/reddit-review-delay/sample-high`
+
 ## 维护说明
 
 本项目为文档可执行说明优先：  

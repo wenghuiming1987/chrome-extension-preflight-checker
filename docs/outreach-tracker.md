@@ -17,6 +17,9 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-20 | BJT | X |  | `/from/x` | Blocked - login required | Local Chrome is not logged in to X |
 | 2026-05-22 | BJT | Reddit manual reply | https://www.reddit.com/r/chrome_extensions/comments/1t906l6/chrome_web_store_review_taking_10_days_after/ | `/from/reddit-review-delay` | Manually posted by user | User reported the prepared review-delay reply was posted; public comment permalink still needs verification |
 | 2026-05-22 | BJT | Reddit manual reply | https://www.reddit.com/r/chrome_extensions/comments/1suf4kl/chrome_review_times_are_brutal/ | `/from/reddit-review-times` | Manually posted by user | User reported the prepared review-times reply was posted; public comment permalink still needs verification |
+| 2026-05-23 | BJT | FreeNoSignup directory | https://freenosignup.com/submit/ | `/from/freenosignup` | Submitted for review | Submitted using `whm5294186@gmail.com`; Google Form confirmation showed "您的回复已记录。" |
+| 2026-05-23 | BJT | App Stack Builder directory | https://appstackbuilder.com/submit-tool | `/from/appstackbuilder` | Submitted for review | Submitted using `whm5294186@gmail.com`; page confirmed: "Tool submitted successfully! We'll review it and add it to our catalog." |
+| 2026-05-23 | BJT | nologin.tools directory | https://nologin.tools/submit/ | `/from/nologin-tools` | Submitted for review | Submitted using `whm5294186@gmail.com`; success page confirmed submission received and created pending listing preview at `https://nologin.tools/tool/chrome-extension-preflight-checker-pages-dev-from-nologin-tools` |
 | 2026-05-23 | BJT | V2EX/Juejin |  | `/from/v2ex` or `/from/juejin` | Planned | Chinese developer feedback |
 | 2026-05-24 | BJT | Best channel follow-up |  |  | Planned | Share early learning |
 | 2026-05-25 | BJT | Review |  |  | Planned | Decide continue/pause/interview |
@@ -46,6 +49,10 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-22 | Corrected keyword-first sub-agent sweep | Completed | Re-ran separate keyword clusters. Qualified reply opportunities were limited to two recent permissions/review-delay Reddit threads; remote-code, CSP, and package-difference clusters had no safe qualified reply target today. |
 | 2026-05-22 | Reddit review-delay reply | Manually posted by user | User reported the prepared reply was posted to the `1t906l6` thread; verify public permalink and monitor `/from/reddit-review-delay`. |
 | 2026-05-22 | Reddit review-times reply | Manually posted by user | User reported the prepared reply was posted to the `1suf4kl` thread; verify public permalink and monitor `/from/reddit-review-times`. |
+| 2026-05-23 | FreeNoSignup | Submitted for review | Public Google Form accepted the tool submission; monitor `/from/freenosignup` and wait for approval before counting it as a live backlink. |
+| 2026-05-23 | App Stack Builder | Submitted for review | Public submit form accepted the tool submission; monitor `/from/appstackbuilder` and wait for catalog approval before counting it as a live backlink. |
+| 2026-05-23 | nologin.tools | Submitted for review | Public submit form accepted the tool submission and produced a pending preview page; monitor `/from/nologin-tools` and wait for public approval before counting it as a live backlink. |
+| 2026-05-23 | Sub-agent cleanup | Completed | One `gpt-5.3-codex-spark` directory-research agent completed and was closed after its useful candidate list was reviewed. |
 
 ## Qualified Reply Opportunities
 
@@ -63,6 +70,14 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-22 | https://www.reddit.com/r/chrome_extensions/comments/1tdqegq/i_am_building_chrome_extension_but_stucked/ | Recent but about project direction, not MV3/pre-submission technical risk. |
 | 2026-05-22 | https://github.com/openai/codex/issues/21700 | Within 30 days but about official extension availability/offline install, not a Chrome Web Store preflight issue; external tool link would be off-topic. |
 | 2026-05-22 | Stack Overflow permissions / CSP / remote-code historical results | Mostly old, closed, already answered, or high self-promotion risk; not counted for today's 7-day reply plan. |
+| 2026-05-23 | https://zearches.com/ | Good directory fit, but the form rejected the browser submission as too fast; delayed retry timed out and direct retry was blocked by ModSecurity. Do not count as submitted. |
+| 2026-05-23 | https://toolscourt.com/submit | Good directory fit, but the multi-step form did not complete after review-step validation; no success confirmation. Do not count as submitted. |
+| 2026-05-23 | https://toolsdirectoryonline.com/submit | Submit path returned 404. |
+| 2026-05-23 | https://toolhunt.co/ | No public submission form found on the inspected page. |
+| 2026-05-23 | https://showmeyoursite.com/ | Login required before submission. |
+| 2026-05-23 | https://indiestack.com/ | Rejected default Pages URL because the directory requires a custom domain. |
+| 2026-05-23 | https://10015.io/product-finder/submit | Public first step opened the product form, but the page showed a sign-in/register requirement for submission. Skipped because login is required. |
+| 2026-05-23 | ExtensionHub / Extension Bazaar / Chrome-Stats extension directories | Skipped because these are primarily for submitting actual Chrome extensions or Chrome Web Store URLs. This project is a web checker for extension developers, not a Chrome extension listing. |
 
 ## Prepared Drafts
 
@@ -186,7 +201,7 @@ Submission result: submitted on 2026-05-20 BJT using `whm5294186@gmail.com`; con
 | 2026-05-22 | Corrected keyword-first search | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Strict sub-agent sweep by keyword cluster found 2 qualified reply opportunities, both recent Reddit permission/review-delay threads; no qualified remote-code, CSP, or package-difference target today. |
 | 2026-05-22 | Reddit review-delay reply |  |  |  |  |  |  |  | User manually posted prepared reply with `/from/reddit-review-delay`; public permalink and Cloudflare events still need verification. |
 | 2026-05-22 | Reddit review-times reply |  |  |  |  |  |  |  | User manually posted prepared reply with `/from/reddit-review-times`; public permalink and Cloudflare events still need verification. |
-| 2026-05-23 | Chinese developer channel |  |  |  |  |  |  |  |  |
+| 2026-05-23 | Directory submissions |  |  |  |  |  |  |  | Submitted FreeNoSignup, App Stack Builder, and nologin.tools; track `/from/freenosignup`, `/from/appstackbuilder`, and `/from/nologin-tools`. These are pending review, not confirmed live backlinks yet. |
 | 2026-05-24 | Follow-up |  |  |  |  |  |  |  |  |
 | 2026-05-25 | Total review |  |  |  |  |  |  |  |  |
 

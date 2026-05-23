@@ -121,6 +121,12 @@
 - 发现问题：原来的 `trackUsageEvent` 只使用 `history.pushState` 改变地址栏，Cloudflare Web Analytics 不会因此发送新的 RUM beacon。
 - 修复方式：关键行为发生时加载一个不可见 iframe 到 `/event/<source>/<event>`，让 Cloudflare 按真实页面加载记录事件路径。
 - 保持限制：不新增后端、不新增数据库、不接第三方分析 SDK、不上传用户文件。
+- 验证结果：
+  - `npm run typecheck` 通过
+  - `npm run build` 通过
+  - 本地预览点击 `Try sample manifest` 后，请求了 `/event/local-frame-check/sample-high`
+  - 线上部署到 `https://54ae04f2.chrome-extension-preflight-checker.pages.dev`
+  - 线上正式域名点击 `Try sample manifest` 后，网络请求中出现 `/event/codex-event-fix/sample-high`，并看到第二次 Cloudflare RUM POST
 - 需要上线后观察：
   - `/event/<source>/sample-high`
   - `/event/<source>/choose-file-click`

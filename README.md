@@ -65,7 +65,7 @@ npm run typecheck # 仅类型检查
 
 上线后建议在 Cloudflare Pages 的 `Metrics` 页面开启 Web Analytics。Cloudflare 会在下一次部署时自动注入统计脚本，用来查看访问量、来源页面和路径表现。
 
-本项目不在代码里接入第三方分析 SDK，也不上传用户文件。为了在 Cloudflare Web Analytics 中看验证漏斗，页面会在关键动作发生时写入虚拟路径：
+本项目不在代码里接入第三方分析 SDK，也不上传用户文件。为了在 Cloudflare Web Analytics 中看验证漏斗，页面会在关键动作发生时加载一个不可见的本地事件路径：
 
 - `/from/<channel>`：外链渠道入口，例如 `/from/reddit`、`/from/x`、`/from/v2ex`
 - `/event/<channel>/choose-file-click`：点击上传/选择文件入口
@@ -78,7 +78,7 @@ npm run typecheck # 仅类型检查
 - `/event/<channel>/export-json`：导出 JSON
 - `/event/<channel>/manual-review-click`：点击人工审查邮件入口
 
-Cloudflare Web Analytics 目前不支持 UTM 参数和自定义事件，所以这里使用路径作为轻量替代。`public/_redirects` 会把这些路径都回退到 `index.html`，适合 Cloudflare Pages 静态部署。
+Cloudflare Web Analytics 目前不支持 UTM 参数和自定义事件，所以这里使用路径作为轻量替代。`public/_redirects` 会把这些路径都回退到 `index.html`，适合 Cloudflare Pages 静态部署。事件路径只用于统计一次页面加载，不会读取或上传用户选择的文件。
 
 ## GitHub Pages 部署
 

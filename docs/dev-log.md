@@ -114,6 +114,21 @@
   - 本地 Chrome/Playwright 桌面和移动视口检查无明显重叠
   - 从 `/from/reddit-review-delay` 点击 sample 后正确记录 `/event/reddit-review-delay/sample-high`
 
+## 2026-05-23
+
+### Cloudflare 事件埋点修复
+
+- 发现问题：原来的 `trackUsageEvent` 只使用 `history.pushState` 改变地址栏，Cloudflare Web Analytics 不会因此发送新的 RUM beacon。
+- 修复方式：关键行为发生时加载一个不可见 iframe 到 `/event/<source>/<event>`，让 Cloudflare 按真实页面加载记录事件路径。
+- 保持限制：不新增后端、不新增数据库、不接第三方分析 SDK、不上传用户文件。
+- 需要上线后观察：
+  - `/event/<source>/sample-high`
+  - `/event/<source>/choose-file-click`
+  - `/event/<source>/upload-file`
+  - `/event/<source>/report-generated`
+  - `/event/<source>/export-markdown`
+  - `/event/<source>/manual-review-click`
+
 ## 维护说明
 
 本项目为文档可执行说明优先：  

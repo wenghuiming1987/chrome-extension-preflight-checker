@@ -78,7 +78,7 @@ Cloudflare Web Analytics currently does not support UTM parameters or custom eve
 - Share `/from/v2ex` for V2EX or similar Chinese developer communities.
 - Share `/from/wechat` for WeChat/private groups.
 
-The app records key actions as virtual paths:
+The app records key actions by loading local virtual paths in a hidden frame:
 
 - `/event/<channel>/choose-file-click`
 - `/event/<channel>/sample-high`
@@ -90,7 +90,7 @@ The app records key actions as virtual paths:
 - `/event/<channel>/export-json`
 - `/event/<channel>/manual-review-click`
 
-Use these path counts to estimate the 7-day funnel. Sample-report events are useful for diagnosing first-use interest, but they do not replace the core upload/report/export targets. Manual review demand should still be confirmed by real email inquiries, not path counts alone.
+Use these path counts to estimate the 7-day funnel. Sample-report events are useful for diagnosing first-use interest, but they do not replace the core upload/report/export targets. Manual review demand should still be confirmed by real email inquiries, not path counts alone. The hidden-frame event path is only a local static page load for Cloudflare Web Analytics; it does not upload selected files.
 
 ## Suggested Channels
 

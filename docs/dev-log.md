@@ -127,6 +127,7 @@
   - 本地预览点击 `Try sample manifest` 后，请求了 `/event/local-frame-check/sample-high`
   - 线上部署到 `https://54ae04f2.chrome-extension-preflight-checker.pages.dev`
   - 线上正式域名点击 `Try sample manifest` 后，网络请求中出现 `/event/codex-event-fix/sample-high`，并看到第二次 Cloudflare RUM POST
+  - Cloudflare GraphQL 刷新后可见普通 Chrome 触发的 `/event/manual-event-check/sample-high` 与 `/event/manual-event-check-2/sample-high`，`bot=0`
 - 需要上线后观察：
   - `/event/<source>/sample-high`
   - `/event/<source>/choose-file-click`

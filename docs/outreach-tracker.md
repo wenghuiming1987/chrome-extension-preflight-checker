@@ -20,6 +20,9 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-23 | BJT | FreeNoSignup directory | https://freenosignup.com/submit/ | `/from/freenosignup` | Submitted for review | Submitted using `whm5294186@gmail.com`; Google Form confirmation showed "您的回复已记录。" |
 | 2026-05-23 | BJT | App Stack Builder directory | https://appstackbuilder.com/submit-tool | `/from/appstackbuilder` | Submitted for review | Submitted using `whm5294186@gmail.com`; page confirmed: "Tool submitted successfully! We'll review it and add it to our catalog." |
 | 2026-05-23 | BJT | nologin.tools directory | https://nologin.tools/submit/ | `/from/nologin-tools` | Submitted for review | Submitted using `whm5294186@gmail.com`; success page confirmed submission received and created pending listing preview at `https://nologin.tools/tool/chrome-extension-preflight-checker-pages-dev-from-nologin-tools` |
+| 2026-05-23 | BJT | PublicTools directory | https://publictools.live/submit | `/from/publictools` | Submitted for review | Submitted as a developer tool; page confirmed: "Submission received! We'll review your tool and add you to the contributors page." |
+| 2026-05-23 | BJT | DevTool Center directory | https://www.devtool.center/submit | `/from/devtool-center` | Submitted for review | Submitted as a free security/developer tool with `development`, `free`, and `extensions` tags; page confirmed: "Submission Received!" and says review within 24 hours. |
+| 2026-05-23 | BJT | Free Useful Websites Directory | https://v0-freewebdir.vercel.app/submit | `/from/freewebdir` | Submitted for review | Submitted using `whm5294186@gmail.com`; page confirmed: "Success! Your website has been submitted and is pending review." |
 | 2026-05-23 | BJT | V2EX/Juejin |  | `/from/v2ex` or `/from/juejin` | Planned | Chinese developer feedback |
 | 2026-05-24 | BJT | Best channel follow-up |  |  | Planned | Share early learning |
 | 2026-05-25 | BJT | Review |  |  | Planned | Decide continue/pause/interview |
@@ -52,7 +55,10 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-23 | FreeNoSignup | Submitted for review | Public Google Form accepted the tool submission; monitor `/from/freenosignup` and wait for approval before counting it as a live backlink. |
 | 2026-05-23 | App Stack Builder | Submitted for review | Public submit form accepted the tool submission; monitor `/from/appstackbuilder` and wait for catalog approval before counting it as a live backlink. |
 | 2026-05-23 | nologin.tools | Submitted for review | Public submit form accepted the tool submission and produced a pending preview page; monitor `/from/nologin-tools` and wait for public approval before counting it as a live backlink. |
-| 2026-05-23 | Sub-agent cleanup | Completed | One `gpt-5.3-codex-spark` directory-research agent completed and was closed after its useful candidate list was reviewed. |
+| 2026-05-23 | PublicTools | Submitted for review | Public submit form accepted the tool submission; monitor `/from/publictools` and wait for approval before counting it as a live backlink. |
+| 2026-05-23 | DevTool Center | Submitted for review | Public submit form accepted the tool submission; monitor `/from/devtool-center` and wait for approval before counting it as a live backlink. |
+| 2026-05-23 | Free Useful Websites Directory | Submitted for review | Public submit form accepted the tool submission using the confirmed contact email; monitor `/from/freewebdir` and wait for approval before counting it as a live backlink. |
+| 2026-05-23 | Sub-agent cleanup | Completed | `gpt-5.3-codex-spark` problem-thread and directory-research agents were reviewed and closed after useful candidates were extracted; posting/submission decisions stayed with the main agent. |
 
 ## Qualified Reply Opportunities
 
@@ -74,6 +80,16 @@ Use this file during the 7-day validation run. Fill it once per day after Cloudf
 | 2026-05-23 | https://toolscourt.com/submit | Good directory fit, but the multi-step form did not complete after review-step validation; no success confirmation. Do not count as submitted. |
 | 2026-05-23 | https://toolsdirectoryonline.com/submit | Submit path returned 404. |
 | 2026-05-23 | https://toolhunt.co/ | No public submission form found on the inspected page. |
+| 2026-05-23 | https://www.toolhunter.cc/submit | Submit page loaded, but no public form fields were visible; only a GitHub link appeared. Skipped until a working submit form is available. |
+| 2026-05-23 | https://saaswall.co/submit | Free submit flow reached a review step, but the final submit attempt did not return a confirmation before the browser session timed out. Do not count as submitted and avoid repeated duplicate attempts today. |
+| 2026-05-23 | https://mk-tool.com/submit-tool and https://mk-tool.com/contact | Submit page routes users toward a general contact form, not a clear tool-directory submission flow. Skipped to avoid low-quality contact-form outreach. |
+| 2026-05-23 | https://toolshelf.dev/submit | Sign-in required before submitting a developer tool. |
+| 2026-05-23 | https://tooldirs.com/submit | Form requires logo and screenshots plus a longer listing flow; not used in this quick three-action run. Revisit only if asset submission is worth the effort. |
+| 2026-05-23 | https://browserextensions.io/submit/ | Directory is for actual browser extension listings and only exposes an email contact path; skipped because this project is a web checker, not a Chrome Web Store extension. |
+| 2026-05-23 | https://extensionhub.in/submit | Directory is for actual Chrome Web Store extension listings; skipped because this project is a web checker, not an extension listing. |
+| 2026-05-23 | https://tooliest.com/submit | Submit page returned a Tooliest 404. |
+| 2026-05-23 | https://www.alldevtool.com/submit | Submit page returned a page-not-found screen; no public submission form. |
+| 2026-05-23 | https://www.freemium.services/submit | Submit page returned 404. |
 | 2026-05-23 | https://showmeyoursite.com/ | Login required before submission. |
 | 2026-05-23 | https://indiestack.com/ | Rejected default Pages URL because the directory requires a custom domain. |
 | 2026-05-23 | https://10015.io/product-finder/submit | Public first step opened the product form, but the page showed a sign-in/register requirement for submission. Skipped because login is required. |
@@ -202,6 +218,7 @@ Submission result: submitted on 2026-05-20 BJT using `whm5294186@gmail.com`; con
 | 2026-05-22 | Reddit review-delay reply |  |  |  |  |  |  |  | User manually posted prepared reply with `/from/reddit-review-delay`; public permalink and Cloudflare events still need verification. |
 | 2026-05-22 | Reddit review-times reply |  |  |  |  |  |  |  | User manually posted prepared reply with `/from/reddit-review-times`; public permalink and Cloudflare events still need verification. |
 | 2026-05-23 | Directory submissions | 1 | 0 | 0 | 0 | 0 | 0 | 0 | Submitted FreeNoSignup, App Stack Builder, and nologin.tools; Cloudflare shows `/from/nologin-tools` = 1 visit as of 14:05 BJT. These are pending review, not confirmed live backlinks yet. `/event/*` remains unreliable until the SPA tracking issue is fixed. |
+| 2026-05-23 | Additional directory submissions |  |  |  |  |  |  |  | Submitted PublicTools, DevTool Center, and Free Useful Websites Directory at about 15:36 BJT. Track `/from/publictools`, `/from/devtool-center`, and `/from/freewebdir`; all are pending review, not confirmed live backlinks yet. |
 | 2026-05-24 | Follow-up |  |  |  |  |  |  |  |  |
 | 2026-05-25 | Total review |  |  |  |  |  |  |  |  |
 
